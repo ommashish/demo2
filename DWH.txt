@@ -1,0 +1,50 @@
+1.sudo -iu root
+
+105 machine 
+
+-->	cd /apps/Batches/LDH/DCFS/SIT2/IE_Reports/ETL/scripts/ 
+-->	vi ../../properties/LA_Presentation_Parameters_Monthly.properties  
+-->	change month ID as mentioned in mail 
+-->	./Individual_Presentation_Monthly_KTR_Run.sh <KTR_namw> SIT2
+-->	 Revert Month on successfull execution
+
+	
+-->	cd /apps/Batches/DCFS/SIT2/SNAPET/ETL/scripts
+-->	vi ../../properties/ETPrsntDailyProperties.properties
+-->	change month ID as mentioned in mail
+-->	./Individual_Presentation_KTR_Run.sh <KTR_namw> SIT2
+-->	Revert Month on successfull execution
+
+
+-->	cd /apps/Batches/DCFS/DEV2/SNAPET/ETL/scripts
+
+never add .KTR at the end of KTR name
+
+properties file =ETPrsntDailyProperties.properties
+thn script file =Individual_Presentation_KTR_Run.sh
+
+properties file =Individual_Integration_KTR_Run.sh
+thn script file =ETIntgProperties.properties
+
+104 machine
+
+chown svc-dwh-uat-ea:svc-dwh-uat-ea 
+chmod 775
+sudo -iu svc-dwh-uat-ea
+Cd /apps/Batches/LDH/LaMEDS/SIT2/WP/scripts
+
+
+FOR DEV
+
+/apps/Batches/LDH/DCFS/DEV2/IE_Reports/ETL/scripts
+vi ../../properties/LA_Presentation_Parameters_Daily.properties
+	
+
+
+
+
+
+
+
+gpg --trust-model always --output "/apps/Batches/DCFS/SIT2/SNAPET/From/SNAPETAnnualOutcomeLWC/Measures_20210331.pgp" --encrypt --recipient 6BC2E100 "/apps/Batches/DCFS/SIT2/SNAPET/From/SNAPETAnnualOutcomeLWC/Measures_20210331.xlsx"
+ 
